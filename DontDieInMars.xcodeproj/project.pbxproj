@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B8A4D062BDFBF9800F0234E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0B8A4D052BDFBF9800F0234E /* Lottie */; };
 		0BAE87662BDF9B7B0076901D /* LosingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAE87652BDF9B7B0076901D /* LosingView.swift */; };
-		0BD491082BDFA37800303568 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0BD491072BDFA37800303568 /* Lottie */; };
 		EC3834E92BDF65790034335E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834E82BDF65790034335E /* LottieView.swift */; };
 		EC3834EE2BDF86740034335E /* WinningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834ED2BDF86740034335E /* WinningScene.swift */; };
 		EC3834F02BDF91730034335E /* LosingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834EF2BDF91730034335E /* LosingScene.swift */; };
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BD491082BDFA37800303568 /* Lottie in Frameworks */,
+				0B8A4D062BDFBF9800F0234E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +118,7 @@
 			);
 			name = DontDieInMars;
 			packageProductDependencies = (
-				0BD491072BDFA37800303568 /* Lottie */,
+				0B8A4D052BDFBF9800F0234E /* Lottie */,
 			);
 			productName = DontDieInMarsSelfMade;
 			productReference = EC64E7BF2BDA0F2D0049F7A2 /* DontDieInMars.app */;
@@ -414,8 +414,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0BD491072BDFA37800303568 /* Lottie */ = {
+		0B8A4D052BDFBF9800F0234E /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = EC3834E52BDF64930034335E /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
