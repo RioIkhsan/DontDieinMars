@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC3834E72BDF64930034335E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EC3834E62BDF64930034335E /* Lottie */; };
+		0BAE87662BDF9B7B0076901D /* LosingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAE87652BDF9B7B0076901D /* LosingView.swift */; };
+		0BD491082BDFA37800303568 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0BD491072BDFA37800303568 /* Lottie */; };
 		EC3834E92BDF65790034335E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834E82BDF65790034335E /* LottieView.swift */; };
-		EC3834EC2BDF6C240034335E /* Spine in Frameworks */ = {isa = PBXBuildFile; productRef = EC3834EB2BDF6C240034335E /* Spine */; };
 		EC3834EE2BDF86740034335E /* WinningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834ED2BDF86740034335E /* WinningScene.swift */; };
 		EC3834F02BDF91730034335E /* LosingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834EF2BDF91730034335E /* LosingScene.swift */; };
 		EC64E7C32BDA0F2D0049F7A2 /* DontDieInMarsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsApp.swift */; };
@@ -22,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BAE87652BDF9B7B0076901D /* LosingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosingView.swift; sourceTree = "<group>"; };
 		EC3834E82BDF65790034335E /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		EC3834ED2BDF86740034335E /* WinningScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningScene.swift; sourceTree = "<group>"; };
 		EC3834EF2BDF91730034335E /* LosingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosingScene.swift; sourceTree = "<group>"; };
@@ -40,14 +41,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC3834EC2BDF6C240034335E /* Spine in Frameworks */,
-				EC3834E72BDF64930034335E /* Lottie in Frameworks */,
+				0BD491082BDFA37800303568 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BAE87672BDF9C630076901D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EC64E7B62BDA0F2D0049F7A2 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +62,7 @@
 				EC64E7DB2BDA447C0049F7A2 /* MyActions.sks */,
 				EC64E7C12BDA0F2D0049F7A2 /* DontDieInMars */,
 				EC64E7C02BDA0F2D0049F7A2 /* Products */,
+				0BAE87672BDF9C630076901D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +85,7 @@
 				EC3834ED2BDF86740034335E /* WinningScene.swift */,
 				EC3834E82BDF65790034335E /* LottieView.swift */,
 				EC3834EF2BDF91730034335E /* LosingScene.swift */,
+				0BAE87652BDF9B7B0076901D /* LosingView.swift */,
 			);
 			path = DontDieInMars;
 			sourceTree = "<group>";
@@ -106,8 +115,7 @@
 			);
 			name = DontDieInMars;
 			packageProductDependencies = (
-				EC3834E62BDF64930034335E /* Lottie */,
-				EC3834EB2BDF6C240034335E /* Spine */,
+				0BD491072BDFA37800303568 /* Lottie */,
 			);
 			productName = DontDieInMarsSelfMade;
 			productReference = EC64E7BF2BDA0F2D0049F7A2 /* DontDieInMars.app */;
@@ -169,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BAE87662BDF9B7B0076901D /* LosingView.swift in Sources */,
 				EC64E7D32BDA173B0049F7A2 /* GameScene.swift in Sources */,
 				EC3834EE2BDF86740034335E /* WinningScene.swift in Sources */,
 				EC64E7C52BDA0F2D0049F7A2 /* ContentView.swift in Sources */,
@@ -308,7 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DontDieInMars/Preview Content\"";
-				DEVELOPMENT_TEAM = H68BB9ZMUS;
+				DEVELOPMENT_TEAM = MW3B4GVT77;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -321,7 +330,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.taniaCresentia.DontDieInMars;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rioikhsan.DontDieInMars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -337,7 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DontDieInMars/Preview Content\"";
-				DEVELOPMENT_TEAM = H68BB9ZMUS;
+				DEVELOPMENT_TEAM = MW3B4GVT77;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -350,7 +359,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.taniaCresentia.DontDieInMars;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rioikhsan.DontDieInMars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -401,15 +410,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EC3834E62BDF64930034335E /* Lottie */ = {
+		0BD491072BDFA37800303568 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EC3834E52BDF64930034335E /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
-		};
-		EC3834EB2BDF6C240034335E /* Spine */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EC3834EA2BDF6C240034335E /* XCRemoteSwiftPackageReference "Spine" */;
-			productName = Spine;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
