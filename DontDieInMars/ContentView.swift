@@ -15,22 +15,24 @@ class StartScene: SKScene {
     override func didMove(to view: SKView) {
         self.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         scene?.scaleMode = .aspectFill
+        
+        let ufo = self.childNode(withName: "//ufo") as? SKSpriteNode
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in: self)
-            let startNode = atPoint(location)
-            
-            if startNode.name == "ufo" {
+            for touch in touches {
+                let location = touch.location(in: self)
+                let startNode = atPoint(location)
                 
-                let game = GameScene(size: self.size)
-                let transition = SKTransition.fade(with: .black, duration: 3)
-                
-                self.view?.presentScene(game, transition: transition)
+                if startNode.name == "ufo" {
+                    
+                    let game = GameScene(size: self.size)
+                    let transition = SKTransition.fade(with: .black, duration: 3)
+                    
+                    self.view?.presentScene(game, transition: transition)
+                }
             }
         }
-    }
 }
 
 struct ContentView: View {

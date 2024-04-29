@@ -1,0 +1,24 @@
+{
+  "originHash" : "b2f40f6344831f3e52c7a9590a3e4611fc99f705d529cbc865f2a50aa0cb4e93",
+  "pins" : [
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios",
+      "state" : {
+        "revision" : "769b88d83a42ca8d5572b020c96f47e3690b3796",
+        "version" : "4.4.3"
+      }
+    },
+    {
+      "identity" : "spine",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/maxgribov/Spine",
+      "state" : {
+        "revision" : "8992a203febef0041bf3cfd64dfaf101d8f55629",
+        "version" : "3.0.4"
+      }
+    }
+  ],
+  "version" : 3
+}
