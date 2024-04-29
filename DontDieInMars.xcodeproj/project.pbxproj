@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC64E7C32BDA0F2D0049F7A2 /* DontDieInMarsSelfMadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsSelfMadeApp.swift */; };
+		EC64E7C32BDA0F2D0049F7A2 /* DontDieInMarsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsApp.swift */; };
 		EC64E7C52BDA0F2D0049F7A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64E7C42BDA0F2D0049F7A2 /* ContentView.swift */; };
 		EC64E7CA2BDA0F2F0049F7A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC64E7C92BDA0F2F0049F7A2 /* Preview Assets.xcassets */; };
 		EC64E7D12BDA13570049F7A2 /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EC64E7D02BDA13570049F7A2 /* StartScene.sks */; };
@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		EC64E7BF2BDA0F2D0049F7A2 /* DontDieInMars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DontDieInMars.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsSelfMadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DontDieInMarsSelfMadeApp.swift; sourceTree = "<group>"; };
+		EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DontDieInMarsApp.swift; sourceTree = "<group>"; };
 		EC64E7C42BDA0F2D0049F7A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EC64E7C92BDA0F2F0049F7A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EC64E7D02BDA13570049F7A2 /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 			children = (
 				EC64E7DD2BDA529E0049F7A2 /* Assets.xcassets */,
 				EC64E7DB2BDA447C0049F7A2 /* MyActions.sks */,
-				EC64E7C12BDA0F2D0049F7A2 /* DontDieInMarsSelfMade */,
+				EC64E7C12BDA0F2D0049F7A2 /* DontDieInMars */,
 				EC64E7C02BDA0F2D0049F7A2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,16 +56,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EC64E7C12BDA0F2D0049F7A2 /* DontDieInMarsSelfMade */ = {
+		EC64E7C12BDA0F2D0049F7A2 /* DontDieInMars */ = {
 			isa = PBXGroup;
 			children = (
-				EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsSelfMadeApp.swift */,
+				EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsApp.swift */,
 				EC64E7D02BDA13570049F7A2 /* StartScene.sks */,
 				EC64E7C42BDA0F2D0049F7A2 /* ContentView.swift */,
 				EC64E7C82BDA0F2F0049F7A2 /* Preview Content */,
 				EC64E7D22BDA173B0049F7A2 /* GameScene.swift */,
 			);
-			path = DontDieInMarsSelfMade;
+			path = DontDieInMars;
 			sourceTree = "<group>";
 		};
 		EC64E7C82BDA0F2F0049F7A2 /* Preview Content */ = {
@@ -150,7 +150,7 @@
 			files = (
 				EC64E7D32BDA173B0049F7A2 /* GameScene.swift in Sources */,
 				EC64E7C52BDA0F2D0049F7A2 /* ContentView.swift in Sources */,
-				EC64E7C32BDA0F2D0049F7A2 /* DontDieInMarsSelfMadeApp.swift in Sources */,
+				EC64E7C32BDA0F2D0049F7A2 /* DontDieInMarsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +283,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DontDieInMarsSelfMade/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DontDieInMars/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -296,7 +296,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.taniaCresentia.DontDieInMarsSelfMade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taniaCresentia.DontDieInMars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -311,7 +311,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DontDieInMarsSelfMade/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"DontDieInMars/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -324,7 +324,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.taniaCresentia.DontDieInMarsSelfMade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taniaCresentia.DontDieInMars;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
