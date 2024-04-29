@@ -12,6 +12,7 @@
 		EC3834E92BDF65790034335E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834E82BDF65790034335E /* LottieView.swift */; };
 		EC3834EE2BDF86740034335E /* WinningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834ED2BDF86740034335E /* WinningScene.swift */; };
 		EC3834F02BDF91730034335E /* LosingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834EF2BDF91730034335E /* LosingScene.swift */; };
+		EC3834F22BDFAA530034335E /* MeteorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834F12BDFAA530034335E /* MeteorScene.swift */; };
 		EC64E7C32BDA0F2D0049F7A2 /* DontDieInMarsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsApp.swift */; };
 		EC64E7C52BDA0F2D0049F7A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64E7C42BDA0F2D0049F7A2 /* ContentView.swift */; };
 		EC64E7CA2BDA0F2F0049F7A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC64E7C92BDA0F2F0049F7A2 /* Preview Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		EC3834E82BDF65790034335E /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		EC3834ED2BDF86740034335E /* WinningScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningScene.swift; sourceTree = "<group>"; };
 		EC3834EF2BDF91730034335E /* LosingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosingScene.swift; sourceTree = "<group>"; };
+		EC3834F12BDFAA530034335E /* MeteorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorScene.swift; sourceTree = "<group>"; };
 		EC64E7BF2BDA0F2D0049F7A2 /* DontDieInMars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DontDieInMars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DontDieInMarsApp.swift; sourceTree = "<group>"; };
 		EC64E7C42BDA0F2D0049F7A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				EC3834ED2BDF86740034335E /* WinningScene.swift */,
 				EC3834E82BDF65790034335E /* LottieView.swift */,
 				EC3834EF2BDF91730034335E /* LosingScene.swift */,
+				EC3834F12BDFAA530034335E /* MeteorScene.swift */,
 				0BAE87652BDF9B7B0076901D /* LosingView.swift */,
 			);
 			path = DontDieInMars;
@@ -182,6 +185,7 @@
 				EC3834EE2BDF86740034335E /* WinningScene.swift in Sources */,
 				EC64E7C52BDA0F2D0049F7A2 /* ContentView.swift in Sources */,
 				EC64E7C32BDA0F2D0049F7A2 /* DontDieInMarsApp.swift in Sources */,
+				EC3834F22BDFAA530034335E /* MeteorScene.swift in Sources */,
 				EC3834F02BDF91730034335E /* LosingScene.swift in Sources */,
 				EC3834E92BDF65790034335E /* LottieView.swift in Sources */,
 			);

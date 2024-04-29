@@ -12,22 +12,27 @@ class GameScene: SKScene {
     
     let background = SKSpriteNode(imageNamed: "full-of-dust")
     let clean = SKSpriteNode(imageNamed: "clean-of-dust")
+    var oxygenTank = SKSpriteNode(imageNamed: "oxygen-tank-0")
+    
+    var oxygenTankTextures: [SKTexture] = []
     
     private var motionManager: CMMotionManager!
     private var lastShakeTime: Date?
-    private let shakeCooldown: TimeInterval = 1.0 // Cooldown interval in seconds
+    private let shakeCooldown: TimeInterval = 0.5 // Cooldown interval in seconds
     private var shakeCount = 0
     private var maxShake = 5
     private var isShakeAllowed = true
+    private var gameStartTime: TimeInterval = 0.0
     
     private var unshakenTimeLimit: TimeInterval = 10.0
     
     override func didMove(to view: SKView) {
         // Setup motion manager to handle accelerometer updates
         
-        background.position = CGPoint(x: size.width/2, y: size.height/2)
-        background.zPosition = 1
-        addChild(background)
+        addBackground()
+        loadOxygenTextures()
+        
+        gameStartTime = CACurrentMediaTime()
         
         motionManager = CMMotionManager()
         motionManager.accelerometerUpdateInterval = 0.2 // Update interval in seconds
@@ -35,6 +40,32 @@ class GameScene: SKScene {
             guard let acceleration = accelerometerData?.acceleration else { return }
             self.handleAccelerometerData(acceleration)
         }
+    }
+    
+    func addBackground() {
+        background.position = CGPoint(x: size.width/2, y: size.height/2)
+        background.zPosition = 1
+        addChild(background)
+    }
+    
+    func loadOxygenTextures() {
+        for i in 0...9 {
+            let texture = SKTexture(imageNamed: "oxygen-tank-\(i)")
+            oxygenTankTextures.append(texture)
+        }
+        
+        oxygenTank = SKSpriteNode(texture: oxygenTankTextures[0])
+        oxygenTank.position = CGPoint(x: size.width/2, y: size.height*8/9)
+        oxygenTank.zPosition = 3
+        addChild(oxygenTank)
+        
+        let animateOxygenTank = SKAction.animate(with: oxygenTankTextures, timePerFrame: 0.75)
+        
+        //        let repeatAction = SKAction.repeatForever(animateOxygenTank)
+        
+        //      oxygenTank.run(repeatAction)
+        oxygenTank.run(animateOxygenTank)
+        
     }
     
     private func handleAccelerometerData(_ acceleration: CMAcceleration) {
@@ -73,11 +104,12 @@ class GameScene: SKScene {
         print("Shake gesture detected!")
         isShakeAllowed = false
         clean.isHidden = false
+        //        oxygenTank.removeFromParent()
         
-        backgroundColor = .red
         clean.position = CGPoint(x: size.width/2, y: size.height/2)
         clean.zPosition = 2
         addChild(clean)
+        //        loadOxygenTextures()
         
         shakeCount = shakeCount + 1
         
@@ -101,30 +133,31 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-            super.update(currentTime)
-            
-            // Check if 10 seconds have passed without shake
-        if let lastShakeTime = self.lastShakeTime {
-            let currentTime = Date()
-            let timeSinceLastShake = currentTime.timeIntervalSince(lastShakeTime)
-            if timeSinceLastShake >= unshakenTimeLimit {
-                    moveToLosingScene()
-                    
-                }
+        super.update(currentTime)
+        
+        // For initial no shake detection
+//        if self.lastShakeTime == nil {
+//            self.lastShakeTime = Date()
+//        }
+        // Check if 10 seconds have passed without shake
+        //        if let lastShakeTime = self.lastShakeTime {
+        //            let currentTime = Date()
+        //            let timeSinceLastShake = currentTime.timeIntervalSince(lastShakeTime)
+        //            if timeSinceLastShake >= unshakenTimeLimit {
+        //                    moveToLosingScene()
+        //
+        //                }
+        //            }
+        
+        //check if all shake are done within 10 seconds
+        let currentTime = CACurrentMediaTime()
+        let elapsedTime = currentTime - gameStartTime
+        if elapsedTime >= unshakenTimeLimit {
+            if shakeCount < maxShake {
+                moveToLosingScene()
             }
         }
-    
-//    override func update(_ currentTime: TimeInterval) {
-//        super.update(currentTime)
-//        
-//        //check if 10 seconds have passed without shake
-//        if let lastShakeTime = self.lastShakeTime {
-//            let timeSinceLastShake = lastShakeTime - currentTime
-//            if timeSinceLastShake >= unshakenTimeLimit {
-//                moveToLosingScene()
-//            }
-//        }
-//    }
+    }
     
     func moveToWinningScene() {
         let winning = WinningScene(size: self.size)
