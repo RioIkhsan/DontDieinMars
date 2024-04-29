@@ -7,6 +7,7 @@
 
 import CoreMotion
 import SpriteKit
+import AVFoundation
 
 class GameScene: SKScene {
     
@@ -26,9 +27,11 @@ class GameScene: SKScene {
     
     private var unshakenTimeLimit: TimeInterval = 10.0
     
+    var backgroundMusicPlayer: AVAudioPlayer!
+    
     override func didMove(to view: SKView) {
         // Setup motion manager to handle accelerometer updates
-        
+        setUpBgm()
         addBackground()
         loadOxygenTextures()
         
@@ -42,6 +45,35 @@ class GameScene: SKScene {
         }
     }
     
+    // Function to play audio with delay
+        func playAudioWithDelay(delay: TimeInterval) {
+            // Calculate the time to play audio
+            let delayTime = CACurrentMediaTime() + delay
+            // Schedule playback with the calculated time
+            backgroundMusicPlayer?.play(atTime: delayTime)
+        }
+    
+    func setUpBgm(){
+        // Load and play background music
+        
+    
+            if let musicURL = Bundle.main.url(forResource: "heartbeat-12sec", withExtension: "mp3") {
+                print("masuk if {}")
+                do {
+                    backgroundMusicPlayer = try AVAudioPlayer(contentsOf: musicURL)
+                    backgroundMusicPlayer.numberOfLoops = -1 // Loop indefinitely
+                    
+//                    backgroundMusicPlayer.play()
+                    playAudioWithDelay(delay: 2.0)
+                    print("masuk do {}")
+                } catch {
+                    print("Error loading background music: \(error)")
+                }
+            } else {
+                print("ga masuk if {}")
+            }
+    }
+    
     func addBackground() {
         background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.zPosition = 1
@@ -49,7 +81,7 @@ class GameScene: SKScene {
     }
     
     func loadOxygenTextures() {
-        for i in 0...9 {
+        for i in 0...11 {
             let texture = SKTexture(imageNamed: "oxygen-tank-\(i)")
             oxygenTankTextures.append(texture)
         }
@@ -59,11 +91,8 @@ class GameScene: SKScene {
         oxygenTank.zPosition = 3
         addChild(oxygenTank)
         
-        let animateOxygenTank = SKAction.animate(with: oxygenTankTextures, timePerFrame: 0.75)
+        let animateOxygenTank = SKAction.animate(with: oxygenTankTextures, timePerFrame: 0.55)
         
-        //        let repeatAction = SKAction.repeatForever(animateOxygenTank)
-        
-        //      oxygenTank.run(repeatAction)
         oxygenTank.run(animateOxygenTank)
         
     }
@@ -160,6 +189,9 @@ class GameScene: SKScene {
     }
     
     func moveToWinningScene() {
+        
+        backgroundMusicPlayer.stop()
+        
         let winning = WinningScene(size: self.size)
         let transition = SKTransition.fade(with: .black, duration: 3)
         
@@ -167,6 +199,9 @@ class GameScene: SKScene {
     }
     
     func moveToLosingScene() {
+        
+        backgroundMusicPlayer.stop()
+        
         let losing = LosingScene(size: self.size)
         let transition = SKTransition.fade(with: .black, duration: 3)
         

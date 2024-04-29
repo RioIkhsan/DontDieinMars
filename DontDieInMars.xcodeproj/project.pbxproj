@@ -13,6 +13,8 @@
 		EC3834EE2BDF86740034335E /* WinningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834ED2BDF86740034335E /* WinningScene.swift */; };
 		EC3834F02BDF91730034335E /* LosingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834EF2BDF91730034335E /* LosingScene.swift */; };
 		EC3834F22BDFAA530034335E /* MeteorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834F12BDFAA530034335E /* MeteorScene.swift */; };
+		EC3834F82BE002EA0034335E /* heartbeat-12sec.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC3834F72BE002EA0034335E /* heartbeat-12sec.mp3 */; };
+		EC3835042BE009EA0034335E /* heartbeat-deathscene.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC3835032BE009EA0034335E /* heartbeat-deathscene.mp3 */; };
 		EC64E7C32BDA0F2D0049F7A2 /* DontDieInMarsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsApp.swift */; };
 		EC64E7C52BDA0F2D0049F7A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64E7C42BDA0F2D0049F7A2 /* ContentView.swift */; };
 		EC64E7CA2BDA0F2F0049F7A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC64E7C92BDA0F2F0049F7A2 /* Preview Assets.xcassets */; };
@@ -27,6 +29,10 @@
 		EC3834ED2BDF86740034335E /* WinningScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningScene.swift; sourceTree = "<group>"; };
 		EC3834EF2BDF91730034335E /* LosingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosingScene.swift; sourceTree = "<group>"; };
 		EC3834F12BDFAA530034335E /* MeteorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorScene.swift; sourceTree = "<group>"; };
+		EC3834F72BE002EA0034335E /* heartbeat-12sec.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "heartbeat-12sec.mp3"; sourceTree = "<group>"; };
+		EC3835032BE009EA0034335E /* heartbeat-deathscene.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "heartbeat-deathscene.mp3"; path = "../../../Downloads/heartbeat-deathscene.mp3"; sourceTree = "<group>"; };
+		EC3835052BE009ED0034335E /* heartbeat-deathscene.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "heartbeat-deathscene.mp3"; sourceTree = "<group>"; };
+		EC38350C2BE00D090034335E /* spooky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spooky.mp3; sourceTree = "<group>"; };
 		EC64E7BF2BDA0F2D0049F7A2 /* DontDieInMars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DontDieInMars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DontDieInMarsApp.swift; sourceTree = "<group>"; };
 		EC64E7C42BDA0F2D0049F7A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,8 +59,12 @@
 		EC64E7B62BDA0F2D0049F7A2 = {
 			isa = PBXGroup;
 			children = (
+				EC3834F72BE002EA0034335E /* heartbeat-12sec.mp3 */,
+				EC38350C2BE00D090034335E /* spooky.mp3 */,
+				EC3835052BE009ED0034335E /* heartbeat-deathscene.mp3 */,
 				EC64E7DD2BDA529E0049F7A2 /* Assets.xcassets */,
 				EC64E7DB2BDA447C0049F7A2 /* MyActions.sks */,
+				EC64E7C42BDA0F2D0049F7A2 /* ContentView.swift */,
 				EC64E7C12BDA0F2D0049F7A2 /* DontDieInMars */,
 				EC64E7C02BDA0F2D0049F7A2 /* Products */,
 			);
@@ -71,9 +81,9 @@
 		EC64E7C12BDA0F2D0049F7A2 /* DontDieInMars */ = {
 			isa = PBXGroup;
 			children = (
+				EC3835032BE009EA0034335E /* heartbeat-deathscene.mp3 */,
 				EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsApp.swift */,
 				EC64E7D02BDA13570049F7A2 /* StartScene.sks */,
-				EC64E7C42BDA0F2D0049F7A2 /* ContentView.swift */,
 				EC64E7C82BDA0F2F0049F7A2 /* Preview Content */,
 				EC64E7D22BDA173B0049F7A2 /* GameScene.swift */,
 				EC3834ED2BDF86740034335E /* WinningScene.swift */,
@@ -158,8 +168,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC3834F82BE002EA0034335E /* heartbeat-12sec.mp3 in Resources */,
 				EC64E7CA2BDA0F2F0049F7A2 /* Preview Assets.xcassets in Resources */,
 				EC64E7D12BDA13570049F7A2 /* StartScene.sks in Resources */,
+				EC3835042BE009EA0034335E /* heartbeat-deathscene.mp3 in Resources */,
 				EC64E7DE2BDA529E0049F7A2 /* Assets.xcassets in Resources */,
 				EC64E7DC2BDA447C0049F7A2 /* MyActions.sks in Resources */,
 			);
