@@ -15,8 +15,6 @@ class StartScene: SKScene {
     override func didMove(to view: SKView) {
         self.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         scene?.scaleMode = .aspectFill
-        
-        let ufo = self.childNode(withName: "//ufo") as? SKSpriteNode
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
