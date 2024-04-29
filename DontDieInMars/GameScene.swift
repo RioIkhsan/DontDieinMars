@@ -20,10 +20,11 @@ class GameScene: SKScene {
     private var maxShake = 5
     private var isShakeAllowed = true
     
+    private var unshakenTimeLimit: TimeInterval = 10.0
+    
     override func didMove(to view: SKView) {
         // Setup motion manager to handle accelerometer updates
         
-        backgroundColor = .blue
         background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.zPosition = 1
         addChild(background)
@@ -56,7 +57,6 @@ class GameScene: SKScene {
                 
                 if timeSinceLastShake > shakeCooldown {
                     // Shake gesture detected and cooldown period passed
-                    //                        clean.removeFromParent()
                     self.handleShakeGesture()
                     self.lastShakeTime = currentTime // Update last shake time
                 }
@@ -90,16 +90,54 @@ class GameScene: SKScene {
             }
         } else {
             motionManager.stopAccelerometerUpdates()
-            let winning = WinningScene(size: self.size)
-            let transition = SKTransition.fade(with: .black, duration: 3)
             
-            self.view?.presentScene(winning, transition: transition)
+            moveToWinningScene()
         }
     }
     
     override func willMove(from view: SKView) {
         // Stop accelerometer updates when scene is about to move from view
         motionManager.stopAccelerometerUpdates()
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+            super.update(currentTime)
+            
+            // Check if 10 seconds have passed without shake
+        if let lastShakeTime = self.lastShakeTime {
+            let currentTime = Date()
+            let timeSinceLastShake = currentTime.timeIntervalSince(lastShakeTime)
+            if timeSinceLastShake >= unshakenTimeLimit {
+                    moveToLosingScene()
+                    
+                }
+            }
+        }
+    
+//    override func update(_ currentTime: TimeInterval) {
+//        super.update(currentTime)
+//        
+//        //check if 10 seconds have passed without shake
+//        if let lastShakeTime = self.lastShakeTime {
+//            let timeSinceLastShake = lastShakeTime - currentTime
+//            if timeSinceLastShake >= unshakenTimeLimit {
+//                moveToLosingScene()
+//            }
+//        }
+//    }
+    
+    func moveToWinningScene() {
+        let winning = WinningScene(size: self.size)
+        let transition = SKTransition.fade(with: .black, duration: 3)
+        
+        self.view?.presentScene(winning, transition: transition)
+    }
+    
+    func moveToLosingScene() {
+        let losing = LosingScene(size: self.size)
+        let transition = SKTransition.fade(with: .black, duration: 3)
+        
+        self.view?.presentScene(losing, transition: transition)
     }
     
 }
