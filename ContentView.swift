@@ -17,7 +17,7 @@ class StartScene: SKScene {
     override func didMove(to view: SKView) {
         self.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         scene?.scaleMode = .aspectFill
-       // setUpBgm()
+        setUpBgm()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -36,7 +36,7 @@ class StartScene: SKScene {
     
     func setUpBgm(){
         // Load and play background music
-        if let musicURL = Bundle.main.url(forResource: "startingpage-spooky", withExtension: "mp3") {
+        if let musicURL = Bundle.main.url(forResource: "intro-spooky", withExtension: "MP3") {
             print("masuk if {}")
             do {
                 backgroundMusicPlayer = try AVAudioPlayer(contentsOf: musicURL)
