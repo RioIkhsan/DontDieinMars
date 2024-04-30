@@ -19,6 +19,7 @@ class WinningScene: SKScene {
         
         addBackground()
         loadAstronaut()
+        moveToMeteorScene()
         
     }
     
@@ -55,7 +56,7 @@ class WinningScene: SKScene {
     }
     
     func moveToMeteorScene() {
-        let game = MeteorScene(size: self.size)
+        let game = StartScene(size: self.size)
         let transition = SKTransition.fade(with: .black, duration: 3)
         
         self.view?.presentScene(game, transition: transition)

@@ -88,6 +88,13 @@ class LosingScene: SKScene {
         ghost.run(fullSequence)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let game = StartScene(size: self.size)
+        let transition = SKTransition.fade(with: .black, duration: 3)
+        
+        self.view?.presentScene(game, transition: transition)
+    }
+    
     func setUpBgm(){
         // Load and play background music
         if let musicURL = Bundle.main.url(forResource: "heartbeat-deathscene", withExtension: "mp3") {
