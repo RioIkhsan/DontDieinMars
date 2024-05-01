@@ -57,7 +57,7 @@ class StartScene: SKScene {
                 
                 addLight()
                 
-                let game = GameScene(size: self.size)
+                let game = TransitionDustScene(size: self.size)
                 let transition = SKTransition.fade(with: .black, duration: 3)
                 
                 self.view?.presentScene(game, transition: transition)
@@ -96,7 +96,7 @@ class StartScene: SKScene {
             print("masuk if {}")
             do {
                 backgroundMusicPlayer = try AVAudioPlayer(contentsOf: musicURL)
-                //                backgroundMusicPlayer.numberOfLoops = -1 // Loop indefinitely
+                                backgroundMusicPlayer.numberOfLoops = -1 // Loop indefinitely
                 playAudioWithDelay(delay: 0.5)
                 
                 print("masuk do {}")

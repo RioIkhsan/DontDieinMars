@@ -19,8 +19,21 @@ class WinningScene: SKScene {
         
         addBackground()
         loadAstronaut()
-        moveToMeteorScene()
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in: self)
+            
+            if background.contains(location) {
+                
+                let game = MeteorScene(size: self.size)
+                let transition = SKTransition.fade(with: .black, duration: 3)
+                
+                self.view?.presentScene(game, transition: transition)
+            }
+        }
     }
     
     func addBackground() {
@@ -51,6 +64,11 @@ class WinningScene: SKScene {
         if astronaut.position.x > size.width/2 {
                 moveToMeteorScene()
             print("Sprite node went out of the X frame")
+        } else {
+            print("Astronaut position")
+            print(astronaut.position.x)
+            print("size.width/2")
+            print(size.width/2)
         }
         
     }

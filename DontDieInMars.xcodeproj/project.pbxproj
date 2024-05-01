@@ -8,14 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		EC3834E72BDF64930034335E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EC3834E62BDF64930034335E /* Lottie */; };
-		EC3834E92BDF65790034335E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834E82BDF65790034335E /* LottieView.swift */; };
 		EC3834EC2BDF6C240034335E /* Spine in Frameworks */ = {isa = PBXBuildFile; productRef = EC3834EB2BDF6C240034335E /* Spine */; };
 		EC3834EE2BDF86740034335E /* WinningScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834ED2BDF86740034335E /* WinningScene.swift */; };
 		EC3834F02BDF91730034335E /* LosingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834EF2BDF91730034335E /* LosingScene.swift */; };
 		EC3834F22BDFAA530034335E /* MeteorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3834F12BDFAA530034335E /* MeteorScene.swift */; };
 		EC3834F82BE002EA0034335E /* heartbeat-12sec.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC3834F72BE002EA0034335E /* heartbeat-12sec.mp3 */; };
 		EC3835042BE009EA0034335E /* heartbeat-deathscene.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC3835032BE009EA0034335E /* heartbeat-deathscene.mp3 */; };
-		EC3835102BE012C60034335E /* LosingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC38350F2BE012C60034335E /* LosingView.swift */; };
 		EC3835122BE08FB10034335E /* intro-spooky.MP3 in Resources */ = {isa = PBXBuildFile; fileRef = EC3835112BE08FB10034335E /* intro-spooky.MP3 */; };
 		EC64E7C32BDA0F2D0049F7A2 /* DontDieInMarsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsApp.swift */; };
 		EC64E7C52BDA0F2D0049F7A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64E7C42BDA0F2D0049F7A2 /* ContentView.swift */; };
@@ -24,17 +22,26 @@
 		EC64E7D32BDA173B0049F7A2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64E7D22BDA173B0049F7A2 /* GameScene.swift */; };
 		EC64E7DC2BDA447C0049F7A2 /* MyActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EC64E7DB2BDA447C0049F7A2 /* MyActions.sks */; };
 		EC64E7DE2BDA529E0049F7A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC64E7DD2BDA529E0049F7A2 /* Assets.xcassets */; };
+		ECF2095D2BE0D3AE00881799 /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2095C2BE0D3AE00881799 /* IntroScene.swift */; };
+		ECF2095F2BE1393400881799 /* TestScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2095E2BE1393400881799 /* TestScene.swift */; };
+		ECF209632BE2035B00881799 /* TransitionDustScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF209622BE2035B00881799 /* TransitionDustScene.swift */; };
+		ECF209652BE2037400881799 /* TransitionDustAnnouncementScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF209642BE2037400881799 /* TransitionDustAnnouncementScene.swift */; };
+		ECF209672BE2057000881799 /* duststorm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ECF209662BE2057000881799 /* duststorm.mp3 */; };
+		ECF2096A2BE2057E00881799 /* dust-announcement.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ECF209692BE2057E00881799 /* dust-announcement.mp3 */; };
+		ECF2096D2BE2215000881799 /* EndingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2096C2BE2215000881799 /* EndingScene.swift */; };
+		ECF2096F2BE2269200881799 /* WinningScene1.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2096E2BE2269200881799 /* WinningScene1.swift */; };
+		ECF209712BE226A900881799 /* WinningScene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF209702BE226A900881799 /* WinningScene2.swift */; };
+		ECF209732BE2278A00881799 /* meteor-announcement.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ECF209722BE2278A00881799 /* meteor-announcement.mp3 */; };
+		ECF209762BE2279300881799 /* checkmark.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ECF209752BE2279300881799 /* checkmark.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC3834E82BDF65790034335E /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		EC3834ED2BDF86740034335E /* WinningScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningScene.swift; sourceTree = "<group>"; };
 		EC3834EF2BDF91730034335E /* LosingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LosingScene.swift; sourceTree = "<group>"; };
 		EC3834F12BDFAA530034335E /* MeteorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorScene.swift; sourceTree = "<group>"; };
 		EC3834F72BE002EA0034335E /* heartbeat-12sec.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "heartbeat-12sec.mp3"; sourceTree = "<group>"; };
 		EC3835032BE009EA0034335E /* heartbeat-deathscene.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "heartbeat-deathscene.mp3"; path = "../../../Downloads/heartbeat-deathscene.mp3"; sourceTree = "<group>"; };
 		EC3835052BE009ED0034335E /* heartbeat-deathscene.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "heartbeat-deathscene.mp3"; sourceTree = "<group>"; };
-		EC38350F2BE012C60034335E /* LosingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LosingView.swift; path = "../../../Downloads/dontdieinmars-main/DontDieInMars/LosingView.swift"; sourceTree = "<group>"; };
 		EC3835112BE08FB10034335E /* intro-spooky.MP3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "intro-spooky.MP3"; path = "../../Downloads/intro-spooky.MP3"; sourceTree = "<group>"; };
 		EC3835132BE08FB50034335E /* intro-spooky.MP3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "intro-spooky.MP3"; sourceTree = "<group>"; };
 		EC64E7BF2BDA0F2D0049F7A2 /* DontDieInMars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DontDieInMars.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +52,26 @@
 		EC64E7D22BDA173B0049F7A2 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		EC64E7DB2BDA447C0049F7A2 /* MyActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyActions.sks; sourceTree = "<group>"; };
 		EC64E7DD2BDA529E0049F7A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECF2095C2BE0D3AE00881799 /* IntroScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
+		ECF2095E2BE1393400881799 /* TestScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScene.swift; sourceTree = "<group>"; };
+		ECF209622BE2035B00881799 /* TransitionDustScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDustScene.swift; sourceTree = "<group>"; };
+		ECF209642BE2037400881799 /* TransitionDustAnnouncementScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDustAnnouncementScene.swift; sourceTree = "<group>"; };
+		ECF209662BE2057000881799 /* duststorm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = duststorm.mp3; path = "../../../Dropbox (Developer Academy)/dont-die-in-mars/duststorm.mp3"; sourceTree = "<group>"; };
+		ECF209682BE2057500881799 /* duststorm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = duststorm.mp3; sourceTree = "<group>"; };
+		ECF209692BE2057E00881799 /* dust-announcement.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "dust-announcement.mp3"; path = "../../../Dropbox (Developer Academy)/dont-die-in-mars/dust-announcement.mp3"; sourceTree = "<group>"; };
+		ECF2096B2BE2058100881799 /* dust-announcement.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "dust-announcement.mp3"; sourceTree = "<group>"; };
+		ECF2096C2BE2215000881799 /* EndingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingScene.swift; sourceTree = "<group>"; };
+		ECF2096E2BE2269200881799 /* WinningScene1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningScene1.swift; sourceTree = "<group>"; };
+		ECF209702BE226A900881799 /* WinningScene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningScene2.swift; sourceTree = "<group>"; };
+		ECF209722BE2278A00881799 /* meteor-announcement.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "meteor-announcement.mp3"; path = "../../Downloads/meteor-announcement.mp3"; sourceTree = "<group>"; };
+		ECF209742BE2278C00881799 /* meteor-announcement.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "meteor-announcement.mp3"; sourceTree = "<group>"; };
+		ECF209752BE2279300881799 /* checkmark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = checkmark.mp3; path = ../../Downloads/checkmark.mp3; sourceTree = "<group>"; };
+		ECF209772BE2279A00881799 /* checkmark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = checkmark.mp3; sourceTree = "<group>"; };
+		ECF2097C2BE2288400881799 /* meteor-announcement.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "meteor-announcement.mp3"; sourceTree = "<group>"; };
+		ECF2097D2BE2288400881799 /* intro-spooky.MP3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "intro-spooky.MP3"; sourceTree = "<group>"; };
+		ECF2097E2BE2288400881799 /* checkmark.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = checkmark.mp3; sourceTree = "<group>"; };
+		ECF2097F2BE2288A00881799 /* intro-spooky.MP3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "intro-spooky.MP3"; path = "../../../Downloads/intro-spooky.MP3"; sourceTree = "<group>"; };
+		ECF209802BE2288D00881799 /* meteor-announcement.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "meteor-announcement.mp3"; path = "../../../Downloads/meteor-announcement.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,13 +90,12 @@
 		EC64E7B62BDA0F2D0049F7A2 = {
 			isa = PBXGroup;
 			children = (
-				EC3834F72BE002EA0034335E /* heartbeat-12sec.mp3 */,
+				EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsApp.swift */,
+				ECF2097B2BE2287E00881799 /* Audio */,
 				EC3835112BE08FB10034335E /* intro-spooky.MP3 */,
-				EC3835052BE009ED0034335E /* heartbeat-deathscene.mp3 */,
+				ECF209722BE2278A00881799 /* meteor-announcement.mp3 */,
+				ECF209752BE2279300881799 /* checkmark.mp3 */,
 				EC64E7DD2BDA529E0049F7A2 /* Assets.xcassets */,
-				EC64E7DB2BDA447C0049F7A2 /* MyActions.sks */,
-				EC64E7C42BDA0F2D0049F7A2 /* ContentView.swift */,
-				EC64E7D02BDA13570049F7A2 /* StartScene.sks */,
 				EC64E7C12BDA0F2D0049F7A2 /* DontDieInMars */,
 				EC64E7C02BDA0F2D0049F7A2 /* Products */,
 			);
@@ -86,16 +112,17 @@
 		EC64E7C12BDA0F2D0049F7A2 /* DontDieInMars */ = {
 			isa = PBXGroup;
 			children = (
+				ECF209812BE228F600881799 /* Unused */,
+				ECF209782BE2283E00881799 /* Start Scene */,
+				ECF209792BE2285100881799 /* Dust Scene */,
+				ECF2097A2BE2285900881799 /* MeteorScene */,
+				ECF209772BE2279A00881799 /* checkmark.mp3 */,
+				ECF209742BE2278C00881799 /* meteor-announcement.mp3 */,
+				ECF209692BE2057E00881799 /* dust-announcement.mp3 */,
+				ECF209662BE2057000881799 /* duststorm.mp3 */,
 				EC3835032BE009EA0034335E /* heartbeat-deathscene.mp3 */,
 				EC3835132BE08FB50034335E /* intro-spooky.MP3 */,
-				EC64E7C22BDA0F2D0049F7A2 /* DontDieInMarsApp.swift */,
 				EC64E7C82BDA0F2F0049F7A2 /* Preview Content */,
-				EC64E7D22BDA173B0049F7A2 /* GameScene.swift */,
-				EC3834ED2BDF86740034335E /* WinningScene.swift */,
-				EC3834E82BDF65790034335E /* LottieView.swift */,
-				EC3834EF2BDF91730034335E /* LosingScene.swift */,
-				EC3834F12BDFAA530034335E /* MeteorScene.swift */,
-				EC38350F2BE012C60034335E /* LosingView.swift */,
 			);
 			path = DontDieInMars;
 			sourceTree = "<group>";
@@ -106,6 +133,64 @@
 				EC64E7C92BDA0F2F0049F7A2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ECF209782BE2283E00881799 /* Start Scene */ = {
+			isa = PBXGroup;
+			children = (
+				EC64E7C42BDA0F2D0049F7A2 /* ContentView.swift */,
+				ECF2095C2BE0D3AE00881799 /* IntroScene.swift */,
+				EC64E7DB2BDA447C0049F7A2 /* MyActions.sks */,
+				EC64E7D02BDA13570049F7A2 /* StartScene.sks */,
+			);
+			path = "Start Scene";
+			sourceTree = "<group>";
+		};
+		ECF209792BE2285100881799 /* Dust Scene */ = {
+			isa = PBXGroup;
+			children = (
+				ECF209622BE2035B00881799 /* TransitionDustScene.swift */,
+				ECF209642BE2037400881799 /* TransitionDustAnnouncementScene.swift */,
+				EC64E7D22BDA173B0049F7A2 /* GameScene.swift */,
+				ECF2096E2BE2269200881799 /* WinningScene1.swift */,
+				EC3834EF2BDF91730034335E /* LosingScene.swift */,
+			);
+			path = "Dust Scene";
+			sourceTree = "<group>";
+		};
+		ECF2097A2BE2285900881799 /* MeteorScene */ = {
+			isa = PBXGroup;
+			children = (
+				EC3834F12BDFAA530034335E /* MeteorScene.swift */,
+				ECF209702BE226A900881799 /* WinningScene2.swift */,
+				ECF2096C2BE2215000881799 /* EndingScene.swift */,
+			);
+			path = MeteorScene;
+			sourceTree = "<group>";
+		};
+		ECF2097B2BE2287E00881799 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				EC3834F72BE002EA0034335E /* heartbeat-12sec.mp3 */,
+				ECF2097D2BE2288400881799 /* intro-spooky.MP3 */,
+				ECF209802BE2288D00881799 /* meteor-announcement.mp3 */,
+				EC3835052BE009ED0034335E /* heartbeat-deathscene.mp3 */,
+				ECF2096B2BE2058100881799 /* dust-announcement.mp3 */,
+				ECF209682BE2057500881799 /* duststorm.mp3 */,
+				ECF2097C2BE2288400881799 /* meteor-announcement.mp3 */,
+				ECF2097E2BE2288400881799 /* checkmark.mp3 */,
+				ECF2097F2BE2288A00881799 /* intro-spooky.MP3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		ECF209812BE228F600881799 /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				EC3834ED2BDF86740034335E /* WinningScene.swift */,
+				ECF2095E2BE1393400881799 /* TestScene.swift */,
+			);
+			path = Unused;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,9 +259,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF209672BE2057000881799 /* duststorm.mp3 in Resources */,
 				EC3834F82BE002EA0034335E /* heartbeat-12sec.mp3 in Resources */,
 				EC64E7CA2BDA0F2F0049F7A2 /* Preview Assets.xcassets in Resources */,
 				EC3835122BE08FB10034335E /* intro-spooky.MP3 in Resources */,
+				ECF2096A2BE2057E00881799 /* dust-announcement.mp3 in Resources */,
+				ECF209762BE2279300881799 /* checkmark.mp3 in Resources */,
+				ECF209732BE2278A00881799 /* meteor-announcement.mp3 in Resources */,
 				EC64E7D12BDA13570049F7A2 /* StartScene.sks in Resources */,
 				EC3835042BE009EA0034335E /* heartbeat-deathscene.mp3 in Resources */,
 				EC64E7DE2BDA529E0049F7A2 /* Assets.xcassets in Resources */,
@@ -191,14 +280,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF2095F2BE1393400881799 /* TestScene.swift in Sources */,
+				ECF2096D2BE2215000881799 /* EndingScene.swift in Sources */,
 				EC64E7D32BDA173B0049F7A2 /* GameScene.swift in Sources */,
+				ECF209712BE226A900881799 /* WinningScene2.swift in Sources */,
+				ECF209632BE2035B00881799 /* TransitionDustScene.swift in Sources */,
 				EC3834EE2BDF86740034335E /* WinningScene.swift in Sources */,
-				EC3835102BE012C60034335E /* LosingView.swift in Sources */,
+				ECF209652BE2037400881799 /* TransitionDustAnnouncementScene.swift in Sources */,
+				ECF2095D2BE0D3AE00881799 /* IntroScene.swift in Sources */,
 				EC64E7C52BDA0F2D0049F7A2 /* ContentView.swift in Sources */,
 				EC64E7C32BDA0F2D0049F7A2 /* DontDieInMarsApp.swift in Sources */,
 				EC3834F22BDFAA530034335E /* MeteorScene.swift in Sources */,
 				EC3834F02BDF91730034335E /* LosingScene.swift in Sources */,
-				EC3834E92BDF65790034335E /* LottieView.swift in Sources */,
+				ECF2096F2BE2269200881799 /* WinningScene1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
