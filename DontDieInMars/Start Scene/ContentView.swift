@@ -16,12 +16,18 @@ class StartScene: SKScene {
     var backgroundMusicPlayer: AVAudioPlayer!
     var light = SKSpriteNode(imageNamed: "light-0")
     var lightTextures: [SKTexture] = []
+    var astronaut = SKSpriteNode(imageNamed: "astronaut-start")
     
     override func didMove(to view: SKView) {
         self.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         scene?.scaleMode = .aspectFill
         setUpBgm()
         addAnimation()
+        
+        astronaut.position = CGPoint(x: 0 - size.width/35, y: 0 - size.height/5)
+        astronaut.zPosition = 1
+        astronaut.alpha = 0
+        addChild(astronaut)
     }
     
     func addAnimation() {
@@ -57,10 +63,24 @@ class StartScene: SKScene {
                 
                 addLight()
                 
-                let game = TransitionDustScene(size: self.size)
-                let transition = SKTransition.fade(with: .black, duration: 3)
+                DispatchQueue.main.asyncAfter(deadline:.now() + 1.0) {
+                    // Fade in the astronaut over a duration of 1 second
+                    let fadeIn = SKAction.fadeIn(withDuration: 1.0)
+                    self.astronaut.run(fadeIn)
+                }
                 
-                self.view?.presentScene(game, transition: transition)
+                
+                DispatchQueue.main.asyncAfter(deadline:.now() + 1.5) {
+                                let game = WinningScene1(size: self.size)
+                                let transition = SKTransition.fade(with:.black, duration: 2)
+                                
+                                self.view?.presentScene(game, transition: transition)
+                            }
+                
+//                let game = TransitionDustScene(size: self.size)
+//                let transition = SKTransition.fade(with: .black, duration: 3)
+//                
+//                self.view?.presentScene(game, transition: transition)
             }
             //            let startNode = atPoint(location)
             //
@@ -85,7 +105,7 @@ class StartScene: SKScene {
         light.setScale(1.0)
         addChild(light)
         
-        let animateLight = SKAction.animate(with: lightTextures, timePerFrame: 0.55)
+        let animateLight = SKAction.animate(with: lightTextures, timePerFrame: 0.10)
         
         light.run(animateLight)
     }

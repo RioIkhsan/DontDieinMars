@@ -89,10 +89,16 @@ class LosingScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let game = StartScene(size: self.size)
-        let transition = SKTransition.fade(with: .black, duration: 3)
-        
-        self.view?.presentScene(game, transition: transition)
+        for touch in touches {
+            let location = touch.location(in: self)
+            
+            if (liquid5.contains(location) || liquid4.contains(location) || liquid3.contains(location) || liquid2.contains(location) || liquid1.contains(location)) {
+                let game = TransitionDustScene(size: self.size)
+                let transition = SKTransition.fade(with: .black, duration: 3)
+                
+                self.view?.presentScene(game, transition: transition)
+            }
+        }
     }
     
     func setUpBgm(){

@@ -34,7 +34,7 @@ class TransitionDustScene: SKScene {
     
     func setUpBgm(){
         // Load and play background music
-        if let musicURL = Bundle.main.url(forResource: "duststrom", withExtension: "MP3") {
+        if let musicURL = Bundle.main.url(forResource: "strong-desert-wind", withExtension: "mp3") {
             print("masuk if {}")
             do {
                 backgroundMusicPlayer = try AVAudioPlayer(contentsOf: musicURL)

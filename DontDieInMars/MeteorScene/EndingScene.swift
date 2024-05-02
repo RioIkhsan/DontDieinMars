@@ -14,7 +14,8 @@ class EndingScene: SKScene {
     private var backgroundMusicPlayer: AVAudioPlayer!
     let background = SKSpriteNode(imageNamed: "ending-scene")
     let astronautEnd = SKSpriteNode(imageNamed: "astronaut-ending")
-
+    let toBeContinued = SKSpriteNode(imageNamed: "to-be-continued")
+//    let label = SKLabelNode(text: "To Be Continued ...")
     
     
     override func didMove(to view: SKView) {
@@ -28,6 +29,11 @@ class EndingScene: SKScene {
         astronautEnd.zPosition = 1
         addChild(astronautEnd)
         
+        toBeContinued.position = CGPoint(x: size.width/2, y: -100)
+        toBeContinued.setScale(0.8)
+        toBeContinued.zPosition = 2
+        addChild(toBeContinued)
+        
         let moveAction = SKAction.move(to: CGPoint(x: 80, y: 30), duration: 1)
         astronautEnd.run(moveAction)
         
@@ -37,6 +43,17 @@ class EndingScene: SKScene {
         background.run(sequenceAction)
         astronautEnd.run(sequenceAction)
         
+        let moveAction2 = SKAction.move(to: CGPoint(x: size.width/2, y: size.height/2), duration: 2)
+        let waitAction2 = SKAction.wait(forDuration: 5)
+        toBeContinued.run(SKAction.sequence([waitAction2, moveAction2]))
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+                let game = IntroScene(size: self.size)
+                let transition = SKTransition.fade(with: .black, duration: 3)
+                
+                self.view?.presentScene(game, transition: transition)
     }
     
     func setUpBgm(){

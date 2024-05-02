@@ -32,12 +32,13 @@ class TransitionDustAnnoucementScene: SKScene {
         let game = GameScene(size: self.size)
         let transition = SKTransition.fade(with: .black, duration: 2)
         
+        backgroundMusicPlayer.stop()
         self.view?.presentScene(game, transition: transition)
     }
     
     func setUpBgm(){
         // Load and play background music
-        if let musicURL = Bundle.main.url(forResource: "dust-announcement", withExtension: "MP3") {
+        if let musicURL = Bundle.main.url(forResource: "dust-announcement", withExtension: "mp3") {
             print("masuk if {}")
             do {
                 backgroundMusicPlayer = try AVAudioPlayer(contentsOf: musicURL)

@@ -8,6 +8,7 @@
 import Foundation
 import SpriteKit
 import CoreMotion
+import AVFoundation
 
 class MeteorScene: SKScene {
     
@@ -63,9 +64,12 @@ class MeteorStartScene: SKScene {
     
     let background = SKSpriteNode(imageNamed: "meteor-transition-page")
     
+    var backgroundMusicPlayer: AVAudioPlayer!
+    
     override func didMove(to view: SKView) {
         
         addBackground()
+        setUpBgm()
         
     }
     
@@ -88,6 +92,32 @@ class MeteorStartScene: SKScene {
         background.zPosition = 1
         addChild(background)
     }
+    
+    //    Function to play audio with delay
+        func playAudioWithDelay(delay: TimeInterval) {
+            // Calculate the time to play audio
+            let delayTime = CACurrentMediaTime() + delay
+            // Schedule playback with the calculated time
+            backgroundMusicPlayer?.play(atTime: delayTime)
+        }
+    
+    func setUpBgm(){
+        if let musicURL = Bundle.main.url(forResource: "meteor-announcement", withExtension: "mp3") {
+            print("masuk if {}")
+            do {
+                backgroundMusicPlayer = try AVAudioPlayer(contentsOf: musicURL)
+                backgroundMusicPlayer.numberOfLoops = -1 // Loop indefinitely
+                
+                //                    backgroundMusicPlayer.play()
+                playAudioWithDelay(delay: 2.0)
+                print("masuk do {}")
+            } catch {
+                print("Error loading background music: \(error)")
+            }
+        } else {
+            print("ga masuk if {}")
+        }
+    }
 }
 
 
@@ -97,8 +127,6 @@ class MeteorGameScene: SKScene, SKPhysicsContactDelegate {
     var motionManager = CMMotionManager()
     
     let background = SKSpriteNode(imageNamed: "background")
-    var oxygenTank = SKSpriteNode(imageNamed: "oxygen-tank-0")
-    var oxygenTankTextures: [SKTexture] = []
     
     let astronaut = SKSpriteNode(imageNamed: "astronaut-back")
     let meteor = SKSpriteNode(imageNamed: "meteor")
@@ -127,7 +155,7 @@ class MeteorGameScene: SKScene, SKPhysicsContactDelegate {
         let spawnAction = SKAction.run { [weak self] in
             self?.spawnMeteor()
         }
-        let delayAction = SKAction.wait(forDuration: 5.0) // Adjust spawn interval as needed
+        let delayAction = SKAction.wait(forDuration: 8.0) // Adjust spawn interval as needed
         let spawnSequence = SKAction.sequence([spawnAction, delayAction])
         let spawnForever = SKAction.repeatForever(spawnSequence)
         run(spawnForever)
@@ -143,7 +171,7 @@ class MeteorGameScene: SKScene, SKPhysicsContactDelegate {
             // Set meteor's initial position and physics properties
             var initialPosition = CGPoint()
             var velocity = CGVector()
-            if meteorCount % 2 == 0 {
+            if meteorCount % 2 != 0 {
                 // Move from upper left to lower right
                 initialPosition = CGPoint(x: 0, y: size.height)
                 velocity = CGVector(dx: 200, dy: -200)
@@ -161,9 +189,8 @@ class MeteorGameScene: SKScene, SKPhysicsContactDelegate {
             meteor.physicsBody?.collisionBitMask = 0
             meteor.physicsBody?.velocity = velocity
             
-            meteorCount += 1
-            
         }
+        meteorCount += 1
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -174,7 +201,7 @@ class MeteorGameScene: SKScene, SKPhysicsContactDelegate {
         // Update meteor scale based on its position
         for node in children where node.name == "meteor" {
             if let meteor = node as? SKSpriteNode {
-                let scale = CGFloat((size.height - meteor.position.y) / size.height) * 1.5 // Adjust scale factor as needed
+                let scale = CGFloat((size.height - meteor.position.y) / size.height) * 3.5 // Adjust scale factor as needed
                 meteor.setScale(scale)
             }
         }
@@ -182,7 +209,7 @@ class MeteorGameScene: SKScene, SKPhysicsContactDelegate {
         if meteorCount > 5 {
             motionManager.stopAccelerometerUpdates()
             
-            let winningScene = MeteorGameSceneUpDown(size: self.size)
+            let winningScene = WinningScene2(size: self.size)
             winningScene.scaleMode = self.scaleMode
             let transition = SKTransition.fade(withDuration: 0.5)
             self.view?.presentScene(winningScene, transition: transition)
@@ -215,24 +242,6 @@ class MeteorGameScene: SKScene, SKPhysicsContactDelegate {
         addChild(background)
     }
     
-    func loadOxygenTextures() {
-        for i in 0...9 {
-            let texture = SKTexture(imageNamed: "oxygen-tank-\(i)")
-            oxygenTankTextures.append(texture)
-        }
-        
-        oxygenTank = SKSpriteNode(texture: oxygenTankTextures[0])
-        oxygenTank.position = CGPoint(x: size.width/2, y: size.height*8/9)
-        oxygenTank.zPosition = 3
-        addChild(oxygenTank)
-        
-        let animateOxygenTank = SKAction.animate(with: oxygenTankTextures, timePerFrame: 1.0)
-        let repeatAction = SKAction.repeatForever(animateOxygenTank)
-        
-        oxygenTank.run(repeatAction)
-        
-    } //unused
-    
     func addAstronaut() {
         astronaut.position = CGPoint(x: size.width/2, y: size.height/6)
         astronaut.setScale(0.5)
@@ -241,7 +250,7 @@ class MeteorGameScene: SKScene, SKPhysicsContactDelegate {
         addChild(astronaut)
         
         //set up physics bodies
-        astronaut.physicsBody = SKPhysicsBody(circleOfRadius: astronaut.size.width / 2)
+        astronaut.physicsBody = SKPhysicsBody(circleOfRadius: astronaut.size.width / 2.5)
         astronaut.physicsBody?.isDynamic = false // Fixed on the ground
         astronaut.physicsBody?.categoryBitMask = 1
         astronaut.physicsBody?.collisionBitMask = 0
@@ -258,7 +267,7 @@ class MeteorGameScene: SKScene, SKPhysicsContactDelegate {
                 }
                 
                 let currentX = self.astronaut.position.x
-                self.destX = currentX + CGFloat(data.acceleration.x * 1000)
+                self.destX = currentX + CGFloat(data.acceleration.x * 300)
                 //buat lebih berat?
             }
         }
@@ -319,8 +328,8 @@ class MeteorLosingScene: SKScene {
         background.zPosition = 1
         addChild(background)
         
-        astronaut.position = CGPoint(x: size.width/2, y: size.height/6)
-        astronaut.setScale(0.5)
+        astronaut.position = CGPoint(x: size.width/2, y: size.height/3)
+        astronaut.setScale(1.0)
         astronaut.zPosition = 2
         addChild(astronaut)
         
@@ -330,8 +339,8 @@ class MeteorLosingScene: SKScene {
         ghost.alpha = 0
         addChild(ghost)
         
-        let waitAction = SKAction.wait(forDuration: 2)
-        let fadeInAction = SKAction.fadeIn(withDuration: 2)
+        let waitAction = SKAction.wait(forDuration: 0.5)
+        let fadeInAction = SKAction.fadeIn(withDuration: 0.5)
         let moveAction = SKAction.move(to: CGPoint(x: size.width / 2, y: size.height*1.5), duration: 3)
         let fadeOutAction = SKAction.fadeOut(withDuration: 1)
         let groupAction = SKAction.group([fadeInAction, moveAction])
@@ -346,8 +355,7 @@ class MeteorLosingScene: SKScene {
             let location = touch.location(in: self)
             
             if astronaut.contains(location) {
-                
-                let game = MeteorGameSceneUpDown(size: self.size)
+                let game = MeteorScene(size: self.size)
                 let transition = SKTransition.fade(with: .black, duration: 3)
                 
                 self.view?.presentScene(game, transition: transition)
@@ -383,12 +391,13 @@ class MeteorGameSceneUpDown: SKScene, SKPhysicsContactDelegate {
         addBackground()
         addAstronaut()
         startSpawningMeteors()
+        print("spawned meteor")
         
         accelerometer = true
         
         // Record the initial position of the astronaut
 //        initialAstronautPosition = astronaut.position
-        initialAstronautPosition = CGPoint(x: size.width/2, y: size.height/2)
+        initialAstronautPosition = CGPoint(x: size.width/2, y: size.height/4)
         
     }
     
@@ -396,7 +405,7 @@ class MeteorGameSceneUpDown: SKScene, SKPhysicsContactDelegate {
         let spawnAction = SKAction.run { [weak self] in
             self?.spawnMeteor()
         }
-        let delayAction = SKAction.wait(forDuration: 2.0) // Adjust spawn interval as needed
+        let delayAction = SKAction.wait(forDuration: 10.0) // Adjust spawn interval as needed
         let spawnSequence = SKAction.sequence([spawnAction, delayAction])
         let spawnForever = SKAction.repeatForever(spawnSequence)
         run(spawnForever)
@@ -414,15 +423,16 @@ class MeteorGameSceneUpDown: SKScene, SKPhysicsContactDelegate {
             var velocity = CGVector()
             if meteorCount % 2 == 0 {
                 // Move from upper left to lower right
-                initialPosition = CGPoint(x: 0, y: size.height)
-                velocity = CGVector(dx: 200, dy: -200)
+                initialPosition = CGPoint(x: 0, y: size.height*4/5)
+                velocity = CGVector(dx: 200, dy: -20)
             } else {
                 // Move from upper right to lower left
-                initialPosition = CGPoint(x: size.width, y: size.height)
-                velocity = CGVector(dx: -200, dy: -200)
+                initialPosition = CGPoint(x: size.width, y: size.height*4/5)
+                velocity = CGVector(dx: -200, dy: -20)
             }
             
             meteor.position = initialPosition
+            meteor.setScale(0.8)
             meteor.physicsBody = SKPhysicsBody(circleOfRadius: meteor.size.width / 2)
             meteor.physicsBody?.affectedByGravity = false
             meteor.physicsBody?.categoryBitMask = 2
@@ -430,15 +440,28 @@ class MeteorGameSceneUpDown: SKScene, SKPhysicsContactDelegate {
             meteor.physicsBody?.collisionBitMask = 0
             meteor.physicsBody?.velocity = velocity
             
-            meteorCount += 1
-            
         }
+        meteorCount += 1
     }
     
     override func update(_ currentTime: TimeInterval) {
         moveY()
         astronaut.run(SKAction.moveTo(y: destY, duration: 1))
         sideConstraints()
+        
+        initialAstronautPosition = CGPoint(x: size.width/2, y: size.height/4)
+        
+//        // Check if any meteor is outside the screen bounds
+//            for node in children where node.name == "meteor" {
+//                if let meteor = node as? SKSpriteNode {
+//                    if meteor.position.y < 0 || meteor.position.y > size.height || meteor.position.x < 0 || meteor.position.x > size.width {
+//                        // Move the astronaut back to the initial position
+//                        let moveBackAction = SKAction.move(to: initialAstronautPosition, duration: 0.5)
+//                        astronaut.run(moveBackAction)
+//                        break // Exit the loop once a meteor is found outside the screen
+//                    }
+//                }
+//            }
         
         // Update meteor scale based on its position
         //        for node in children where node.name == "meteor" {
@@ -448,7 +471,7 @@ class MeteorGameSceneUpDown: SKScene, SKPhysicsContactDelegate {
         //            }
         //        }
         
-        if meteorCount >= 5 {
+        if meteorCount > 5 {
             motionManager.stopAccelerometerUpdates()
             
             let winningScene = WinningScene2(size: self.size)
@@ -466,15 +489,16 @@ class MeteorGameSceneUpDown: SKScene, SKPhysicsContactDelegate {
             // Astronaut collided with meteor
             astronaut.texture = SKTexture(imageNamed: "astronaut-back-dead")
             
-            let losingScene = MeteorLosingScene(size: self.size)
-            losingScene.scaleMode = self.scaleMode
-            let transition = SKTransition.fade(withDuration: 3.0)
-            self.view?.presentScene(losingScene, transition: transition)
+//            let losingScene = MeteorLosingScene(size: self.size)
+//            losingScene.scaleMode = self.scaleMode
+//            let transition = SKTransition.fade(withDuration: 3.0)
+//            self.view?.presentScene(losingScene, transition: transition)
             
         } else {
             // No collision with meteor
             // Move astronaut back to initial position after a delay
-            let moveBackAction = SKAction.move(to: initialAstronautPosition, duration: 0.5)
+//            let moveBackAction = SKAction.move(to: initialAstronautPosition, duration: 0.5)
+            let moveBackAction = SKAction.move(to: CGPoint(x: size.width/2, y: size.height/4), duration: 0.5)
             astronaut.run(SKAction.sequence([moveBackAction, SKAction.wait(forDuration: 2.0)]))
         }
         
@@ -491,7 +515,7 @@ class MeteorGameSceneUpDown: SKScene, SKPhysicsContactDelegate {
     }
     
     func addAstronaut() {
-        astronaut.position = CGPoint(x: size.width/2, y: size.height/2)
+        astronaut.position = CGPoint(x: size.width/2, y: size.height/4)
         astronaut.setScale(0.5)
         astronaut.zPosition = 3
         
@@ -525,7 +549,7 @@ class MeteorGameSceneUpDown: SKScene, SKPhysicsContactDelegate {
     // setting limits of game area on the sides
     func sideConstraints() {
         let upperConstraint = size.height * 0.1
-        let lowerConstraint = size.height * -0.1
+        let lowerConstraint = 0.0 //size.height * -0.1
         let positionY = astronaut.position.y
         
         if (positionY > upperConstraint) {

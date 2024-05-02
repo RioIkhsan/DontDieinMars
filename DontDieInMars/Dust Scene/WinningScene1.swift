@@ -40,12 +40,12 @@ class WinningScene1: SKScene {
     
     func setUpBgm(){
         // Load and play background music
-        if let musicURL = Bundle.main.url(forResource: "checkmark", withExtension: "mp3") {
+        if let musicURL = Bundle.main.url(forResource: "checksfx", withExtension: "mp3") {
             print("masuk if {}")
             do {
                 backgroundMusicPlayer = try AVAudioPlayer(contentsOf: musicURL)
                 
-                playAudioWithDelay(delay: 1)
+                playAudioWithDelay(delay: 1.6)
                 print("masuk do {}")
             } catch {
                 print("Error loading background music: \(error)")

@@ -32,13 +32,13 @@ class GameScene: SKScene {
     private var isShakeAllowed = true
     private var gameStartTime: TimeInterval = 0.0
     
-    private var unshakenTimeLimit: TimeInterval = 10.0
+    private var unshakenTimeLimit: TimeInterval = 18.0
     
     var backgroundMusicPlayer: AVAudioPlayer!
     
     override func didMove(to view: SKView) {
         
-//        setUpBgm()
+        setUpBgm()
         
         
         //        do {
@@ -211,7 +211,7 @@ class GameScene: SKScene {
         oxygenTank.zPosition = 3
         addChild(oxygenTank)
         
-        let animateOxygenTank = SKAction.animate(with: oxygenTankTextures, timePerFrame: 0.75)
+        let animateOxygenTank = SKAction.animate(with: oxygenTankTextures, timePerFrame: 1.2)
         
         //        let repeatAction = SKAction.repeatForever(animateOxygenTank)
         
@@ -269,7 +269,7 @@ class GameScene: SKScene {
         
         
         if shakeCount < maxShake {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                 switch self.shakeCount {
                 case 1:
                     print("Scene 2")
@@ -342,6 +342,7 @@ class GameScene: SKScene {
         let winning = WinningScene1(size: self.size)
         let transition = SKTransition.fade(with: .black, duration: 3)
         
+        backgroundMusicPlayer.stop()
         self.view?.presentScene(winning, transition: transition)
     }
     
@@ -349,6 +350,7 @@ class GameScene: SKScene {
         let losing = LosingScene(size: self.size)
         let transition = SKTransition.fade(with: .black, duration: 3)
         
+        backgroundMusicPlayer.stop()
         self.view?.presentScene(losing, transition: transition)
     }
     
